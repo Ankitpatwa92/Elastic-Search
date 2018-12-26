@@ -51,3 +51,40 @@ http://elasticServerIP:9200/indexName   //Delete Particular index
 http://elasticServerIP:9200/indexName/type   //Delete Particular type in index
 
 ```
+
+### Elastic Search Bool query
+
+```
+POST _search
+{
+  "query": {
+    "bool" : {
+      "must" : {
+        "term" : { "user" : "kimchy" }
+      },
+      "must_not" : {
+        "range" : {
+          "age" : { "gte" : 10, "lte" : 20 }
+        }
+      },
+      "should" : [
+        { "term" : { "tag" : "wow" } },
+        { "term" : { "tag" : "elasticsearch" } }
+      ],
+      "minimum_should_match" : 1,
+      "boost" : 1.0
+    }
+  }
+}
+
+```
+
+### Elastic Search Partial Update Record
+```
+POST test/_doc/1/_update
+{
+    "doc" : {
+        "name" : "new_name"
+    }
+}
+```
