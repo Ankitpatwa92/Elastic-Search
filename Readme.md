@@ -1,6 +1,6 @@
 # Elastic Search Important Queries
 
-### Elasric Create Index Query
+### Create Index Query
 ```
 PUT twitter
 {
