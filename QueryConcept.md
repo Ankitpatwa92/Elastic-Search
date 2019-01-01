@@ -1,6 +1,6 @@
 ## Elastic Search Query Concept
 
-###Term Query
+### Term Query
 
 Text fields are analyzed. This means that their values are first passed through an analyzer to produce a list of terms, which are 
 then added to the inverted index.
