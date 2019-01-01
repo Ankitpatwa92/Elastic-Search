@@ -10,6 +10,7 @@ and lower cases them. For instance, the standard analyzer would turn the string 
 #### Result will found
 
 ```
+POST _search
 {
   "query": {
     "term": {
@@ -73,6 +74,7 @@ For example, if you index the following documents (using standard analyzer for t
 
 This match_phrase query will only return the first and second documents :
 ```
+POST _search
 {
   "query": {
     "match_phrase": {
@@ -84,6 +86,7 @@ This match_phrase query will only return the first and second documents :
 
 This match_phrase query will also return result because standard analyzer will remove all punctuation mark !@#$%^&*()
 ```
+POST _search
 {
   "query": {
     "match_phrase": {
@@ -104,7 +107,7 @@ This will divide entire sentance into token and the search each token regardless
 
 { "foo":"World Hello" }
 ```
-
+POST _search
 {
    "query": {
         "query_string" : {
@@ -120,6 +123,7 @@ It will return all document
 This will divide entire sentance into token and the search each token regardless of order and case (Need to find out difference between
 query_string and Match Query)
 ```
+POST _search
 {
     "query": {
         "match": {
@@ -130,3 +134,19 @@ query_string and Match Query)
 ```
 
 
+### Range Query
+
+```
+GET _search
+{
+    "query": {
+        "range" : {
+            "age" : {
+                "gte" : 10,
+                "lte" : 20,
+                "boost" : 2.0
+            }
+        }
+    }
+}
+```
