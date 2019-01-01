@@ -1,35 +1,6 @@
 # Elastic Search Important Queries
 
-### Delete data of types in index without deleting index and type
-
-```
-POST twitter,blog/_docs,post/_delete_by_query
-{
-  "query": {
-    "match_all": {}
-  }
-}
-```
-
-### Get all Index List
-```
-http://elasticServerIP:9200/_cat/indices?v
-```
-
-### Search By Index name Type name
-
-```
-http://elasticServerIP:9200/index/type/_search
-
-```
-
-### Search any value in Elastic Seach
-```
-http://elasticServerIP:9200/_search?q=searchvalue
-```
-
 ### Elasric Create Index Query
-
 ```
 PUT twitter
 {
@@ -39,6 +10,31 @@ PUT twitter
             "number_of_replicas" : 2 
         }
     }
+}
+```
+
+### Get all Index List
+```
+http://elasticServerIP:9200/_cat/indices?v
+```
+
+### Search By Index name Type name
+```
+http://elasticServerIP:9200/index/type/_search
+```
+
+### Search any value in Elastic Seach
+```
+http://elasticServerIP:9200/_search?q=searchvalue
+```
+
+### Delete data of types in index without deleting index and type
+```
+POST twitter,blog/_docs,post/_delete_by_query
+{
+  "query": {
+    "match_all": {}
+  }
 }
 ```
 
