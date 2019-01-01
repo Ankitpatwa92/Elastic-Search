@@ -92,3 +92,25 @@ This match_phrase query will also return result because standard analyzer will r
   }
 }
 ```
+
+### Query String query
+
+This will divide entire sentance into token and the search each token regardless of order and case
+
+```
+{ "foo":"I just said hello world" }
+
+{ "foo":"Hello world" }
+
+{ "foo":"World Hello" }
+```
+
+{
+   "query": {
+        "query_string" : {
+            "query" : "I worl hello" 
+        }
+    }
+}
+
+It will return all document 
