@@ -54,4 +54,41 @@ and lower cases them. For instance, the standard analyzer would turn the string 
 #### In Above query ! mark is used for search but standard analyzer break sentance with punuation marks 
 
 
+### Match Phrase
+ query will analyze the input if analyzers are defined for the queried field and find documents matching the following criterias
+ 
+All the search terms must appear in the field
+All the search terms must have the same order as the input value
+Match Phrase query is not case sensitive
 
+For example, if you index the following documents (using standard analyzer for the field foo):
+
+```
+{ "foo":"I just said hello world" }
+
+{ "foo":"Hello world" }
+
+{ "foo":"World Hello" }
+```
+
+This match_phrase query will only return the first and second documents :
+```
+{
+  "query": {
+    "match_phrase": {
+      "foo": "Hello World"
+    }
+  }
+}
+```
+
+This match_phrase query will also return result because standard analyzer will remove all punctuation mark !@#$%^&*()
+```
+{
+  "query": {
+    "match_phrase": {
+      "foo": "hello !@#$%^&*() world"
+    }
+  }
+}
+```
