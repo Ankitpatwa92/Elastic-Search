@@ -98,7 +98,7 @@ This match_phrase query will also return result because standard analyzer will r
 This will divide entire sentance into token and the search each token regardless of order and case
 
 ```
-{ "foo":"I just said hello world" }
+{ "foo":"I just said"}
 
 { "foo":"Hello world" }
 
