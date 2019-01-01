@@ -114,3 +114,19 @@ This will divide entire sentance into token and the search each token regardless
 }
 
 It will return all document 
+
+
+### Match Query
+This will divide entire sentance into token and the search each token regardless of order and case (Need to find out difference between
+query_string and Match Query)
+```
+{
+    "query": {
+        "match": {
+            "title": "HELLO"
+        }
+    }
+}
+```
+
+
