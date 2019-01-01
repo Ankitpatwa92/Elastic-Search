@@ -7,7 +7,7 @@ then added to the inverted index.
 There are many ways to analyze text: the default standard analyzer drops most punctuation, breaks up text into individual words, 
 and lower cases them. For instance, the standard analyzer would turn the string “Quick Brown Fox!” into the terms [quick, brown, fox].
 
-Result will found
+#### Result will found
 
 ```
 {
@@ -18,7 +18,7 @@ Result will found
   }
 }
 ```
-Cases where result will not found
+#### Cases where result will not found
 
 ```
 {
@@ -29,7 +29,7 @@ Cases where result will not found
   }
 }
 ```
-In Above query Quick not in lower case
+####  In Above query Quick not in lower case
 
 ```
 {
@@ -40,7 +40,7 @@ In Above query Quick not in lower case
   }
 }
 ```
-In Above query sentance is used in term query to seach insted of single token
+#### In Above query sentance is used in term query to seach insted of single token
 
 ```
 {
@@ -51,7 +51,7 @@ In Above query sentance is used in term query to seach insted of single token
   }
 }
 ```
-In Above query ! mark is used for search but standard analyzer break sentance with punuation marks 
+#### In Above query ! mark is used for search but standard analyzer break sentance with punuation marks 
 
 
 
