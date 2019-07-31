@@ -150,3 +150,12 @@ GET _search
     }
 }
 ```
+
+### Difference between term query and match query and match pharase query
+```
+Data :"This is your Company"
+
+term query search only particular term not sentence   this,is,your,company
+Match Quuery: This is your Company,  This IS YOUR Company, Company This is yOUR sss,is your,company   <case insensitive> <Order does not matter>
+Match Phrase: This is your Company, This is ,is your,your   <case insensitive>   <Order Matter> <Match Exact Phrase>
+```
