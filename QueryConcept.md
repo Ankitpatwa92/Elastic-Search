@@ -121,7 +121,7 @@ It will return all document
 
 ### Match Query
 This will divide entire sentance into token and the search each token regardless of order and case (Need to find out difference between
-query_string and Match Query)
+query_string and Match Query). Match query anlyze input but term query does not that's why if you serach using 'HELLO' match query will give result but term query not
 ```
 POST _search
 {
