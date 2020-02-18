@@ -16,9 +16,15 @@ Queries -> Does this document match? How well does it match? uses scoring
 ### How to make es backup?
 
 //Create Repo
-PUT
-http://localhost:9200/_snapshot/esbackup
-
+```
+#curl -XPUT -H "Content-Type: application/json;charset=UTF-8" 'http://localhost:9200/_snapshot/esbackup' -d '{
+  "type": "fs",
+  "settings": {
+     "location": "/elasticseacrhData/es-backup",
+     "compress": true
+  }
+}
+```
 
 //Create snapshot
 PUT
